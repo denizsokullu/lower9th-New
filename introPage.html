@@ -6,61 +6,61 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="main.css">
-		<style>
-		    body{
-		    	background-color:black;
-		    	line-height:1.2;
-		    }
-			.container{
-				width:40%;
-			}
-			h1{
-				margin-top:200px;
-				margin-bottom:30px;
-				font-size:24px;
-			}
-			p{
-				margin-bottom:30px;
-			}
-			.button {
-			    background-color: white;
-			    border: solid 2px white;
-			    border-radius:5px;
-			    color: black;
-			    padding: 15px 32px;
-			    text-align: center;
-			    text-decoration: none;
-			    display: inline-block;
-			    font-size: 16px;
-			    margin: 4px 2px;
-			    cursor: pointer;
-			    transition: all 0.2s;
+		<script src="typed.js"></script>
+		<script>
+		    $(function(){
 
-			}
-			.button:hover{
-				border: solid 2px white;
-				background-color: black;
-				color:white;
-				text-decoration:none;
-				transition: all 0.2s;
-			}
-			.button-container{
-				display:block;
-				margin: 0 auto;
-				text-align:center;
-			}
-		</style>
+		        $("#typed").typed({
+		            // strings: ["Typed.js is a <strong>jQuery</strong> plugin.", "It <em>types</em> out sentences.", "And then deletes them.", "Try it out!"],
+		            stringsElement: $('#typed-strings'),
+		            typeSpeed: 30,
+		            backDelay: 500,
+		            loop: false,
+		            contentType: 'html', // or text
+		            // defaults to false for infinite loop
+		            loopCount: false,
+		            callback: function(){ foo(); },
+		            resetCallback: function() { newTyped(); }
+		        });
+
+		        $(".reset").click(function(){
+		            $("#typed").typed('reset');
+		        });
+
+		    });
+
+		    function newTyped(){ /* A new typed object */ }
+
+		    function foo(){ console.log("Callback"); }
+
+		</script>
 	</head>
 	<body>
-		<div class="container">
-			<h1> Intro </h1>
-			<p>It’s the year 2018, just over a night, the whole New Orleans was hacked by a hacker group called Katrina, and the results were disastrous. Leaking into the network of banks, government communication and personal communication through a server at Lower 9th ward, the whole network of the city instantly vanished and all devices connected to the internet stopped working forever.</p>
+		<div class ="landing">
+			<div id="typed-strings">
+                <span>The Katrina Hack.</span>
+                <p>New Orleans lost its digital identity.</p>
+                <p>Lower 9th Ward was hit the hardest.</p>
+                <p>Time to tell their story.</p>
+            </div>
+            <span id="typed" style="white-space:pre;"></span>
 
-            <p> The most heavily affected region was the Lower 9th Ward and it seemed as if the whole district was wiped off the internet. Following this, the community lived through the chaos of losing their digital identity and spent years to recover from the Katrina Hack.</p>
-
-			<p>This website navigates you through the untold stories of 3 victims from the Katrina Hack that all had something really important for them lost in the tragedy. </p>
-			<div class = "button-container" style = "margin-top:60px"><a href="index.html" class="button">Enter</a></div>
-			
+			<div class ="hidden-names">
+				<span><a href="kirkW.html">Kirk Washington</a></span>
+				<span><a href="jeanG.html">Jean Gibson</a></span>
+				<span><a href="terrenceM.html">Terrance Marshall</a></span>
+			</div>
+			<!-- Put some stuff here about the intro - consistent information -->
 		</div>
 	</body>
+	
+<!-- 	<script>
+	  $(function(){
+	      $("h1").typed({
+	        strings: ["The Katrina Hack.", "New Orleans lost its digital identity.","Lower 9 was hit the hardest.","Time to tell their story."],
+	        typeSpeed: 60,
+	        backDelay: 1000
+	      });
+	  });
+	</script> -->
 </html>
